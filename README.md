@@ -34,55 +34,55 @@ go get -u github.com/channellabs/mosso
 package main
 
 import (
-	"github.com/channellabs/mosso"
+  "github.com/channellabs/mosso"
 )
 
 type Sex uint8
 
 const (
-	SexOfUnknown Sex = iota
-	SexOfMale
-	SexOfFemale
+  SexOfUnknown Sex = iota
+  SexOfMale
+  SexOfFemale
 )
 
 type User struct {
-	Name string `json:"name"`
-	Age  uint8  `json:"age"`
-	Sex  Sex    `json:"sex"`
+  Name string `json:"name"`
+  Age  uint8  `json:"age"`
+  Sex  Sex    `json:"sex"`
 }
 
 func main() {
-	var users = []User{
-		{
-			Name: "tom",
-			Age:  18,
-			Sex:  SexOfMale,
-		},
-		{
-			Name: "tom",
-			Age:  18,
-			Sex:  SexOfFemale,
-		},
-	}
+  var users = []User{
+    {
+      Name: "tom",
+      Age:  18,
+      Sex:  SexOfMale,
+    },
+    {
+      Name: "tom",
+      Age:  18,
+      Sex:  SexOfFemale,
+    },
+  }
 
-	// Console Output Example:
-	// main.go:33
-	// --- CurrentType([]main.User) | Start ------------------
-	// [
-	//   {
-	//     "name": "tom",
-	//     "age": 18,
-	//     "sex": 1
-	//   },
-	//   {
-	//     "name": "tom",
-	//     "age": 18,
-	//     "sex": 2
-	//   }
-	// ]
-	// --- CurrentType([]main.User) | Finish ------------------
-	//
-	mosso.DebugShowContentWithJSON(users)
+  // Console Output Example:
+  // main.go:33
+  // --- CurrentType([]main.User) | Start ------------------
+  // [
+  //   {
+  //     "name": "tom",
+  //     "age": 18,
+  //     "sex": 1
+  //   },
+  //   {
+  //     "name": "tom",
+  //     "age": 18,
+  //     "sex": 2
+  //   }
+  // ]
+  // --- CurrentType([]main.User) | Finish ------------------
+  //
+  mosso.DebugShowContentWithJSON(users)
 }
 ```
 
@@ -97,10 +97,10 @@ data := map[string]string{"username": "fishfinal", "email": "contact.fishfinal@g
 
 // Example: Add an info tag, hide type borders, and write to a file
 mosso.DebugShowContentWithJSON(data,
-	mosso.WithInfo("UserInfo"),                     // Add a custom tag/description
-	mosso.WithSpecificOfVisual(true),             // Show the "Start" and "Finish" borders
-	mosso.WithSpecificOfWriteFile(true),          // Enable writing to file
-	mosso.WithSpecificOfFilename("hello.json"),   // Specify the output filename (default is mosso.txt)
+  mosso.WithInfo("UserInfo"),                   // Add a custom tag/description
+  mosso.WithSpecificOfVisual(true),             // Show the "Start" and "Finish" borders
+  mosso.WithSpecificOfWriteFile(true),          // Enable writing to file
+  mosso.WithSpecificOfFilename("hello.json"),   // Specify the output filename (default is mosso.txt)
 )
 ```
 
@@ -110,7 +110,7 @@ If you don't want to print directly to the console but need the string represent
 
 ```go
 jsonStr := mosso.DebugContentWithJSON(data, 
-	mosso.WithSpecificOfVisual(false), // Disable borders for clean JSON string
+  mosso.WithSpecificOfVisual(false), // Disable borders for clean JSON string
 )
 ```
 
