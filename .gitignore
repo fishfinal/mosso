@@ -18,9 +18,10 @@
 vendor/
 
 
-# Temp files.
+# Temporary files.
 mosso.txt
 debug.log
+temporary
 
 
 /hello.json
